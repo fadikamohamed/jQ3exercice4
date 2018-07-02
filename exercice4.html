@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <title>Exercice 4</title>
+  </head>
+  <body>
+    <button id="height">Hauteur</button>
+    <button id="green">Vert</button>
+    <button id="colorBack">Couleurs initiales</button>
+    <button id="hideRectangle">Cacher le rectangle</button>
+    <button id="showRectangle">Montrer le rectangle</button>
+    <div id="rectangle"></div>
+    <script>
+
+        //Déclanchement de l'évenement au moment du clic
+        $('#height').click(function() {
+          //Récupération de la hauteur dans une variable
+          rectangle = $('#rectangle').height();
+          //Si la hauteur est supérieur ou égale a 100...
+          if (rectangle >= '100') {
+            //Changer mettre la hauteur a 10px
+            $('#rectangle').css('height', '10px');
+            //Sinon
+          } else {
+            //Augmenter la hauteur de 10px
+            $('#rectangle').css('height', '+=10px');
+          }
+        });
+        //Déclanchement de l'évenement au moment du clic
+        $('#green').click(function() {
+          //Change la couleur en vert
+          $('#rectangle').css('background-color', 'green');
+        })
+        //Déclanchement de l'évenement au moment du clic
+        $('#colorBack').click(function() {
+          //Remet la couleur d'origine
+          $('#rectangle').css('background', 'blue');
+        })
+        //Déclanchement de l'évenement au moment du clic
+        $('#hideRectangle').click(function() {
+          //Cache la div
+          $('#rectangle').hide();
+        })
+        //Déclanchement de l'évenement au moment du clic
+        $('#showRectangle').click(function() {
+          //Montre la div
+          $('#rectangle').show();
+        })
+    </script>
+  </body>
+</html>
